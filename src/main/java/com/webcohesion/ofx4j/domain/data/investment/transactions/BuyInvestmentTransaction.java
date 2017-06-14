@@ -16,6 +16,7 @@
 
 package com.webcohesion.ofx4j.domain.data.investment.transactions;
 
+import com.webcohesion.ofx4j.domain.data.common.Currency;
 import com.webcohesion.ofx4j.domain.data.investment.accounts.SubAccountType;
 import com.webcohesion.ofx4j.domain.data.seclist.SecurityId;
 import com.webcohesion.ofx4j.meta.Aggregate;
@@ -45,6 +46,20 @@ public class BuyInvestmentTransaction {
   private OriginalCurrency originalCurrencyInfo;
   private String subAccountSecurity;
   private String subAccountFund;
+  private Currency currency;
+
+  /**
+   * Added haphazardly by Taylor!
+   */
+  @ChildAggregate( order = 21 )
+  public Currency getCurrency() {
+    return currency;
+  }
+  public void setCurrency(Currency currency) {
+    this.currency = currency;
+  }
+
+
 
   /**
    * Gets the investment transaction child aggregate.
